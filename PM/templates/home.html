@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content = 'IE=edge'>
+<title>PM</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<style>
+.container {
+margin:8rem;
+}
+
+.login-wrapper {
+display:flex;
+align-items:center;
+height:80vh;
+justify-content:center;
+}
+
+.form{
+width:500px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+<div class="login-wrapper">
+<form methods='POST' class="form" action="/predict/">
+<h3 style="text-align:center;">Welcome {{ user.username }}, to our Ebola preliminary diagnosis tool. Fill the form for results.</h3>
+<br>
+<p> </p>
+<p></p>
+<div class="mb-3">
+<label for="input_claw_length" class="form-label">Symptom_one:</label>
+<input type="int" class = "form-control" name = "claw_length_cm" id = "input_claw_lenth_cm" id="input_claw_length" value = "9.266">
+</div>
+
+<div class="mb-3">
+<label for="input_endangered" class="form-label">Symptom_two: </label>
+<select name="endangered" id="input_endangered" class="form-control">
+ <option value="least_concern">low</option>
+ <option value="vulnerable">medium</option>
+ <option value="critically_endangered">high</option>
+  </select>
+ </div>
+ <div class="mb-3">
+ <label for="input_size_cm" class="form-label">Symptom_three: </label>
+ <input type="int" class="form-control" name="size_cm" id="input_size_cm" value="65.49">
+ </div>
+
+ <div class="mb-3">
+<label for="input_sub_specie" class="form-label">Symptom_four</label>
+<select name="sub_specie" id="input_sub_specie" class="form-control">
+ <option value="Hoffman’s two-toed sloth">The previous day</option>
+<option value="Linnaeus’s two-toed sloth">Two days back</option>
+<option value="Pale-throated sloth">About a week back</option>
+<option value="Brown-throated sloth ">About two weeks back</option>
+<option value="Maned three-toed sloth">Not clear when</option>
+<option value="Pygmy three-toed sloth">Never experienced</option>
+</select>
+</div>
+
+<div class="mb-3">
+<label for="input_tail_length_cm" class="form-label">Symptom_five: </label>
+ <input type="int" class="form-control" name="tail_length_cm" id="input_tail_length_cm" value="0.691">
+  </div>
+
+<div class="mb-3">
+<class="form-label">Symptom_six: </label>
+<input type="int" class="form-control" name="weight_kg" id="input_weight_kg" value="4.724 ">
+ </div>
+
+
+<h5 style="text-align: center;">Result: </h5><b><p style="text-align: center;">{{predicted}}</p></b> <br>
+
+ <button type="submit" class="btn btn-dark btn-sm">Diagnosis</button>
+
+                <p></p>
+                <p>Predict <a href="#ss">again?</a> </p>
+
+            </form>
+
+        </div>
+        <button position-center><a href="logout" class="scrollto">Logout</a></button>
+
+    </div>
+</body>
+
+</html>
