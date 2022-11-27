@@ -120,3 +120,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+DEFAULT_FILE_STORAGE = 'ipfs_storage.InterPlanetaryFileSystemStorage'
+
+IPFS_STORAGE_API_URL = 'http://localhost:5001/api/v0/'
+IPFS_STORAGE_GATEWAY_URL = 'http://localhost:8080/ipfs/'
